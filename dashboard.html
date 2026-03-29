@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="logo">
+  📋 Smart Task Manager
+</div>
+  <button onclick="toggleTheme()">🌙 Theme</button>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<div class="main">
+
+  <div class="header">
+    <h2>Welcome, <span id="user"></span></h2>
+  </div>
+
+  <div class="stats">
+    <div class="card">
+      <h3 id="total"></h3>
+      <p>Total</p>
+    </div>
+    <div class="card">
+      <h3 id="completed"></h3>
+      <p>Completed</p>
+    </div>
+  </div>
+
+  <div class="task-box">
+    <input id="taskInput" placeholder="Add task">
+    <button onclick="addTask()">Add</button>
+
+    <input id="search" placeholder="Search..." onkeyup="renderTasks()">
+
+    <select id="filter" onchange="renderTasks()">
+      <option value="all">All</option>
+      <option value="completed">Completed</option>
+      <option value="pending">Pending</option>
+    </select>
+
+    <div id="taskList"></div>
+  </div>
+<span id="totalTasks">0</span>
+<span id="completedTasks">0</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
